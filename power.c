@@ -1,11 +1,10 @@
 #include <stdio.h>
 
-// function declaration
 int power(int base, int n);
 
 int main(int argc, char *argv[]) {
     printf("power(2, 5) is: %d\n", power(2, 5));
-    return 0;
+    return 0; // success
 }
 
 // function definition
