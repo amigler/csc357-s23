@@ -11,9 +11,10 @@ int main(int argc, char *argv[])
     if (argc == 1) { // no args; copy standard input
         filecopy(stdin, stdout);
     } else {
-        while(--argc > 0) {
-            if ((fp = fopen(*++argv, "r")) == NULL) {
-                printf("cat: can't open %s\n", *argv);
+        for (int i = 1; i < argc; i++) {
+            fp = fopen(argv[i], "r");
+            if (fp == NULL) {
+                printf("cat: can't open %s\n", argv[i]);
                 return 1;
             } else {
                 filecopy(fp, stdout);
