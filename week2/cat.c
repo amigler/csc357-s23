@@ -3,7 +3,7 @@
 // function declaration
 void filecopy(FILE *, FILE *);
 
-// cat:  concatenate files, version 1
+// cat:  concatenate files
 // From The C Programming Language, Section 7.5
 int main(int argc, char *argv[])
 {
@@ -26,11 +26,24 @@ int main(int argc, char *argv[])
 }
 
 
-/* filecopy:  copy file ifp to file ofp */
+// filecopy:  copy file ifp to file ofp using getc()
 void filecopy(FILE *ifp, FILE *ofp)
 {
     int c;
+    // while (c = getc(ifp) != EOF) { // invalid, evaluates to: c = (getc(ifp) != EOF)
     while ((c = getc(ifp)) != EOF) {
         putc(c, ofp);
+
+    }
+}
+
+
+// filecopy:  copy file ifp to file ofp using fgets()
+void filecopy2(FILE *ifp, FILE *ofp)
+{
+    char str[513];
+    char *p;
+    while ((p = fgets(str, 512, ifp)) != NULL) {
+        fputs(str, ofp);
     }
 }
