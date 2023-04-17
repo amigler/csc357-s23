@@ -8,7 +8,7 @@ int main(int argc, char *argv[]) {
 
     int a = 357;
     int b = 430;
-
+    
     printf("Initially, a = %d, b = %d\n", a, b);
     
     swap_flop(a, b);
