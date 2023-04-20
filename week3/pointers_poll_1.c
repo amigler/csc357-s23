@@ -9,10 +9,12 @@ int main(int argc, char* argv[]) {
     int *p3 = a;     // 1st element in array a
     *p1 = 100;
     *p2 = 200;
-    p1[1] = 300;
+    p1[2] = 300;
     p2[1] = 400;
     p3[2] = 500;
 
+    printf("a = %p\n", a);
+    
     printf("{ %d, %d, %d, %d, %d }\n", a[0], a[1], a[2], a[3], a[4]);
     
     return EXIT_SUCCESS;

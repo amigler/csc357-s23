@@ -7,17 +7,21 @@ void strcpy3(char *s, char *t);
 
 int main(int argc, char *argv[]) {
 
-    char str1[4] = "357";
+    char *str1 = "357";
     char str2[4] = "453";
 
     char *p1 = str1;
     char *p2 = str2;
-    
+
     printf("Initially: str1 = %s, str2 = %s, p1 = %s, p2 = %s\n", str1, str2, p1, p2);
     printf("Initially, as pointers: str1 = %p, str2 = %p, p1 = %p, p2 = %p\n", str1, str2, p1, p2);
+
+    // p1 = p2;  // not valid
+    // str1 = str2; // not valid
     
-    strcpy(p1, p2);
-    //p1 = p2;
+    strcpy(str1, str2);  // ok
+    strcpy(p1, p2);  // ok (same behavior)
+
     
     printf("After copy: str1 = %s, str2 = %s, p1 = %s, p2 = %s\n", str1, str2, p1, p2);
     printf("After copy, as pointers: str1 = %p, str2 = %p, p1 = %p, p2 = %p\n", str1, str2, p1, p2);
