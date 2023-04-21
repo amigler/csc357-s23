@@ -1,6 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#include "bseq.h"
+
+
 // read/write a sequence of integers from/to a file in binary format
 // command line arguments: integer max, file name
 int main(int argc, char *argv[]) {
@@ -17,10 +20,7 @@ int main(int argc, char *argv[]) {
             printf("Unable to open file, %s\n", argv[2]);
             return EXIT_FAILURE;
         }        
-        int oc = 0, i = 0;
-        while ((oc = fread(&i, sizeof(int), 1, fp)) == 1) {
-            printf("%d\n", i);
-        }
+        read_ints(fp);
         fclose(fp);
     } else {
         // write integers 0..max to file
@@ -39,3 +39,4 @@ int main(int argc, char *argv[]) {
         
     return EXIT_SUCCESS;
 }
+

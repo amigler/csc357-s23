@@ -7,9 +7,9 @@ int main(int argc, char *argv[]) {
     int *p = &arr[1];
     int **dp = &p; // pointer to a pointer
     
-    *(*dp) += 1;
+    **dp += 1;
     p += 1;
-    *(*dp) += 1;
+    **dp += 1;
 
     // What values does arr hold at this point?
     // Poll:
