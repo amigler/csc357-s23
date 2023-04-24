@@ -26,6 +26,8 @@ int main(int argc, char *argv[]) {
                        (the_rect.pt1.y + the_rect.pt2.y)/2);
 
 
+    the_rect.pt1 = addpoint(middle.pt1, middle.pt2);
+    
     printf("the_rect: (%d, %d) (%d, %d) \n", the_rect.pt1.x, the_rect.pt1.y, the_rect.pt2.x, the_rect.pt2.y);
     printf("middle: (%d, %d) \n", middle.x, middle.y);
     
