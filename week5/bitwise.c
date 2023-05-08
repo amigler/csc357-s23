@@ -7,7 +7,7 @@ void print_bits(FILE *out, uint16_t n) {
     if (n>>1) {
         print_bits(out, n>>1);
     }
-    fprintf(out, "%d", n&0x1u);
+    fprintf(out, "%d", n & 0x1u);
 }
 
 
@@ -46,6 +46,26 @@ int main(int argc, char *argv[]) {
 
     print_bits(stdout, a);
     printf("\n");
+
+    printf("chars: \n");
+    
+
+    char a1 = 'A';
+    unsigned char mask = ' ';
+    printf("A = ");
+    print_bits(stdout, a1);
+    printf("\n");
+    print_bits(stdout, mask);
+    printf("\n");
+
+    printf("space = ");
+    print_bits(stdout, ' ');
+    printf("\n");
+
+    printf("a = ");
+    print_bits(stdout, 'a');
+    printf("\n");
+
     
     return EXIT_SUCCESS;
 }

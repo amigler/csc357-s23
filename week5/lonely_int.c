@@ -4,7 +4,7 @@
 int find_the_lonely_int(int *array, size_t array_size) {
     int result = 0;
     for(int i = 0; i < array_size; ++i) {
-        result ^= array[i];  // result = results ^ array[i]
+        result ^= array[i];  // result = result ^ array[i];
     }
     return result;
 }
