@@ -17,6 +17,7 @@ int  main(void)
      }
 
      printf("before fork\n");
+     fflush(stdout);
      
      if ((pid = fork()) < 0) {
          printf("fork error\n");
