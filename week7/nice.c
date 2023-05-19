@@ -30,7 +30,7 @@ int main(int argc, char* argv[])
     int ret;
     int adj = 0;
 
-    setbuf(stdout, NULL);  // disable buffering on stdout
+    //setbuf(stdout, NULL);  // disable buffering on stdout
     nzero = NZERO;
     printf("NZERO = %d\n", nzero);
     if (argc == 2) {
