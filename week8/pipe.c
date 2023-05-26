@@ -17,7 +17,8 @@ int main(void) {
         printf("fork error");
     } else if (pid > 0) {  /* parent */
         close(fd[0]); 
-        write(fd[1], "hello world\n", 12);
+        write(fd[1], "hello from parent\n", 18);
+        sleep(1);
     } else {              /* child */
         close(fd[1]);
         n = read(fd[0], line, MAXLINE);
