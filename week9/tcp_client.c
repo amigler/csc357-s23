@@ -33,6 +33,6 @@ int main(int argc, char *argv[]) {
     len = recv(sock_fd, buff, sizeof(buff), 0);
     write(STDOUT_FILENO, buff, len);
     
-    shutdown(sock_fd);
+    shutdown(sock_fd, SHUT_RDWR);
     return 0;
 }

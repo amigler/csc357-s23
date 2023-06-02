@@ -42,8 +42,8 @@ int main(int argc, char *argv[]) {
     write(STDOUT_FILENO,buff,mlen);
     mlen = send(newsock, MESG, strlen(MESG), 0);
     
-    shutdown(sock_fd);
-    shutdown(newsock);
+    shutdown(sock_fd, SHUT_RDWR);
+    shutdown(newsock, SHUT_RDWR);
     
     return 0;
 }

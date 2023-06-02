@@ -40,7 +40,7 @@ int main(int argc, char *argv[]) {
     len = recvfrom(sock_fd, buff, sizeof(buff), 0, (struct sockaddr *) &sa, &slen);
     write(STDOUT_FILENO, buff, len);
     
-    //shutdown(sock_fd);
+    shutdown(sock_fd, SHUT_RDWR);
     
     return 0;
 }
